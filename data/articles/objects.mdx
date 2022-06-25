@@ -1,0 +1,41 @@
+---
+excerpt: "blog about understanding Objects"
+title: "Js Objects Dymystified"
+publishedAt: "2022-02-16"
+---
+
+# OBJECTS
+
+Object stored collection of key value pairs and complex entities.
+
+```jsx
+Object literal declaration
+
+let person = {
+key : value
+```
+
+### Access of properties
+
+Dot :
+
+Person.name
+
+Bracket :
+
+```jsx
+const person = {
+  name: "vipin",
+  "full name": "vipin chandra",
+};
+person.name;
+person["full name"];
+```
+
+### Method to get keys ,values , entries
+
+Object.keys , Object.values , Object.entries Returns an array of property ,values , property:values
+
+But they don't read a property from prototype object.
+
+Whereas For in Loop does read.

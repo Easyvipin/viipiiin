@@ -1,5 +1,94 @@
+.titleContainer {
+}
+
 .title {
-  font-family: MLiberation Mono;
   font-weight: bold;
   font-size: 4rem;
+}
+
+.secTitle {
+  font-weight: bold;
+  font-size: 4rem;
+  border-bottom: 5px solid #000;
+  padding-bottom: 0.6rem;
+}
+
+.subTitle {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+/* about */
+
+.about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.aboutDescription {
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+
+.exploreButton {
+  display: flex;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  padding: 0.2rem 0.5rem;
+}
+.exploreButton p {
+  margin-right: 0.7rem;
+}
+
+.explore {
+  font-size: 10rem;
+  text-align: center;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 280px;
+  padding: 0.9rem;
+  margin: 2rem;
+}
+
+.cardHeader {
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.card .date,
+.readTime,
+.tag {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+}
+
+.cardBody {
+  font-size: 1rem;
+}
+
+.readButton {
+  display: flex;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  padding: 0.2rem 0.5rem;
 }

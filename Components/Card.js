@@ -1,6 +1,7 @@
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-const Card = ({ title, excerpt, readTime, tag, date }) => {
+const Card = ({ title, excerpt, readTime, tag, date, slug }) => {
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
@@ -16,7 +17,9 @@ const Card = ({ title, excerpt, readTime, tag, date }) => {
         </p>
       </div>
       <div className={styles.cardFooter}>
-        <button className={styles.readButton}>Read</button>
+        <Link href={`/blogs/${slug}`}>
+          <a className={styles.readButton}>Read</a>
+        </Link>
       </div>
     </div>
   );

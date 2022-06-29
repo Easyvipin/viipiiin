@@ -17,6 +17,7 @@ body {
   background-color: var(--bodyBg);
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  position: relative;
 }
 
 a {
@@ -30,6 +31,15 @@ a {
 
 .header-name {
   font-size: 2.1rem;
+}
+
+nav {
+  position: fixed;
+  width: 73.5vw;
+  background-color: var(--bodyBg);
+  z-index: 5;
+  margin-top: 0;
+  top: 0%;
 }
 
 nav ul {

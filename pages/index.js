@@ -32,6 +32,7 @@ export default function Home({ posts }) {
                 date={frontMatter.publishedAt}
                 tag={frontMatter.tag}
                 readTime={frontMatter.readingTime}
+                slug={frontMatter.slug}
               />
             );
           })}

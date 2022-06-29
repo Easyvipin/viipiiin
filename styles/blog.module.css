@@ -1,0 +1,27 @@
+.articleContainer {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 4rem 6rem;
+}
+.articleTitle {
+  font-size: 4rem;
+}
+.publishDate {
+  background-color: black;
+  color: #ccc;
+  padding: 0.4rem;
+}
+.time {
+  background-color: black;
+  color: #ccc;
+  padding: 0.4rem;
+  margin: 0rem 1rem;
+}
+.cover {
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}

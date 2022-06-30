@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Profile from "../Images/Covers/strip2.jpg";
+import Profile from "../Images/Icons/jumping.svg";
 
 const About = () => {
   return (
@@ -22,11 +22,7 @@ const About = () => {
           </button>
         </div>
         <div>
-          <Image
-            src="https://img.icons8.com/ios/250/000000/user-male.png"
-            width={700}
-            height={700}
-          ></Image>
+          <Image src={Profile} width={800} height={800}></Image>
         </div>
       </div>
       <div className={styles.explore}>&#129175;</div>

@@ -2,12 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import About from "../Components/About";
 import Card from "../Components/Card";
+import MailchimpComponent from "../Components/MailchimpComponent";
 import Navigation from "../Components/Navigation";
 import styles from "../styles/Home.module.css";
 import { getArticleFromSlug, getSlugs, getAllArticles } from "../utils/mdx";
 
 export default function Home({ posts }) {
-  console.log(posts);
+  /*   console.log(process.env.NEXT_PUBLIC_MAILCHIMP_ACTION_URL); */
   return (
     <div className={styles.container}>
       <Head>
@@ -37,6 +38,7 @@ export default function Home({ posts }) {
             );
           })}
         </div>
+        <MailchimpComponent />
       </main>
     </div>
   );

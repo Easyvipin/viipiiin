@@ -143,3 +143,29 @@
     justify-content: center;
   }
 }
+
+/* subscribe-container */
+
+.subscribeContainer {
+  border: 1px solid black;
+  padding: 3rem 0rem;
+  background-image: url("https://img.icons8.com/ios/250/FFFFFF/yacht.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(44, 44, 44);
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.subscribeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribeContainer .formContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

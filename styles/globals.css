@@ -91,6 +91,19 @@ footer {
   font-weight: 800;
   text-align: center;
   padding: 1rem;
+  background-color: rgb(44, 44, 44);
+  color: #ccc;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a h4 {
+  margin: 0;
+  margin-left: 0.3rem;
 }
 
 @media screen and (max-width: 400px) {

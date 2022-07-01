@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navigation from "../Components/Navigation";
 import "../styles/globals.css";
 
@@ -7,13 +8,20 @@ function MyApp({ Component, pageProps }) {
       <Navigation />
       <Component {...pageProps} />
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Viipiiin
-        </a>
+        <div>
+          <a
+            href="https://twitter.com/easyvipin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="https://img.icons8.com/ios/250/FFFFFF/twitter.png"
+              width={20}
+              height={20}
+            />
+            <h4>easyvipin</h4>
+          </a>
+        </div>
       </footer>
     </>
   );

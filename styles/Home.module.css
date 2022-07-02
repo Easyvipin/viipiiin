@@ -67,30 +67,41 @@
 
 .flexContainer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
 .card {
-  border: 1px solid black;
+  border-radius: 5px;
   box-sizing: border-box;
   width: 280px;
   padding: 0.9rem;
   margin: 2rem;
+  box-shadow: 0px 0px 4px rgb(44, 44, 44);
 }
 
 .cardHeader {
 }
 
 .cardTitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
+}
+.attributes {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .card .date,
 .readTime,
 .tag {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   padding: 0.3rem;
+  margin: 0.3rem;
+  background-color: rgb(44, 44, 44);
+  color: #fff;
+  box-shadow: 0px 0px 4px rgb(44, 44, 44);
 }
 
 .cardBody {

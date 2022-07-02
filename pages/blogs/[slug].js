@@ -9,14 +9,16 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeCodeTitles from "rehype-code-titles";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { getSlugs, getArticleFromSlug } from "../../utils/mdx";
+import { getSlugs, getArticleFromSlug, getAllArticles } from "../../utils/mdx";
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 import "highlight.js/styles/atom-one-dark-reasonable.css";
+import Card from "../../Components/Card";
+import Pich from "../../Components/Pich";
 
 hljs.registerLanguage("javascript", javascript);
 
-export default function Blog({ post: { source, frontmatter } }) {
+export default function Blog({ post: { source, frontmatter }, otherPosts }) {
   useEffect(() => {
     updateCodeSyntaxHighlighting();
   });
@@ -26,7 +28,7 @@ export default function Blog({ post: { source, frontmatter } }) {
       hljs.highlightBlock(block);
     });
   };
-
+  console.log(otherPosts);
   return (
     <React.Fragment>
       <Head>
@@ -47,11 +49,27 @@ export default function Blog({ post: { source, frontmatter } }) {
             objectFit="cover"
           />
         </div>
-        <div className="content">
+        <div className={styles.content}>
           <MDXRemote {...source} />
         </div>
-
-        <div className={styles.blogFooter}>div.</div>
+        <Pich />
+        <div className={styles.blogFooter}>
+          <div className={styles.headingFooter}>More Blogs to explore</div>
+          <div className={styles.flexContainer}>
+            {otherPosts.map((frontMatter) => {
+              return (
+                <Card
+                  title={frontMatter.title}
+                  excerpt={frontMatter.excerpt}
+                  date={frontMatter.publishedAt}
+                  tag={frontMatter.tag}
+                  readTime={frontMatter.readingTime}
+                  slug={frontMatter.slug}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
@@ -60,6 +78,7 @@ export default function Blog({ post: { source, frontmatter } }) {
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const { content, frontmatter } = await getArticleFromSlug(slug);
+  const AllBlogs = await getAllArticles();
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -78,12 +97,15 @@ export async function getStaticProps({ params }) {
     },
   });
 
+  const getRestBlog = AllBlogs.filter((eachBlog) => eachBlog.slug !== slug);
+
   return {
     props: {
       post: {
         source: mdxSource,
         frontmatter,
       },
+      otherPosts: getRestBlog,
     },
   };
 }

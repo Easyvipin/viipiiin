@@ -6,9 +6,11 @@ const Card = ({ title, excerpt, readTime, tag, date, slug }) => {
     <div className={styles.card}>
       <div className={styles.cardHeader}>
         <p className={styles.cardTitle}>{title}</p>
-        <span className={styles.date}>{date}</span>
-        <span className={styles.readTime}>{readTime}</span>
-        <span className={styles.tag}>{tag}</span>
+        <div className={styles.attributes}>
+          <span className={styles.date}>{date}</span>
+          <span className={styles.readTime}>{readTime}</span>
+          <span className={styles.tag}>{tag}</span>
+        </div>
       </div>
       <div className={styles.cardBody}>
         <p className={styles.excerpt}>

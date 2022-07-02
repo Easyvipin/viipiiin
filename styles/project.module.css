@@ -1,0 +1,116 @@
+.projectContainer {
+  border: 3px dashed black;
+  padding: 3rem 3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  background-color: #dcdddf;
+}
+
+.projectHeader {
+  font-size: 3rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectHeader div {
+  margin-right: 1rem;
+}
+
+.projectContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.projectListContainer {
+  flex: 1;
+}
+
+.eachList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+  padding: 0.3rem 0rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.eachList:first-of-type {
+  margin-top: 0rem;
+}
+
+.eachList div {
+  font-size: 1rem;
+}
+
+.projectDescContainer {
+  flex: 1;
+  padding: 1rem 1rem;
+  background-color: rgb(44, 44, 44);
+  color: #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(44, 44, 44);
+}
+.projectDescContainerMobile {
+  flex: 1;
+  padding: 1rem 1rem;
+  background-color: rgb(44, 44, 44);
+  color: #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(44, 44, 44);
+  margin-top: 1rem;
+}
+
+.projectDescContainer p {
+  letter-spacing: 0.1rem;
+}
+
+.linksFooter {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.linksFooter a:first-of-type {
+  margin-left: 0;
+}
+
+.linksFooter a {
+  margin-left: 0.4rem;
+}
+
+.activeButton {
+  background-color: rgb(234, 240, 65);
+}
+
+.projectDisplay,
+.projectHide {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .projectDisplay {
+    display: block;
+  }
+  .projectHide {
+    display: none;
+  }
+  .projectDescContainer {
+    display: none;
+  }
+  .eachList {
+    width: 100%;
+  }
+  .projectHeader {
+    font-size: 2rem;
+  }
+  .projectHeader div {
+    margin-right: 1rem;
+  }
+}

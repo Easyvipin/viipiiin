@@ -42,6 +42,7 @@
 .aboutDescription {
   font-weight: 500;
   line-height: 1.8rem;
+  color: #594a4e;
 }
 
 .exploreButton {
@@ -147,14 +148,11 @@
 /* subscribe-container */
 
 .subscribeContainer {
-  border: 1px solid black;
   padding: 3rem 0rem;
-  background-image: url("https://img.icons8.com/ios/250/FFFFFF/yacht.png");
-  background-size: contain;
-  background-repeat: no-repeat;
   background-color: rgb(44, 44, 44);
   color: #fff;
   border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px rgb(44, 44, 44);
 }
 
 .subscribeForm {
@@ -168,4 +166,61 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.subscribeForm input {
+  height: 40px;
+  width: 400px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  padding: 0rem 0.8rem;
+  border-radius: 0.5rem;
+}
+.subscribeForm button {
+  height: 40px;
+  margin-left: 30px;
+  width: 180px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #66c074;
+  font-weight: 800;
+  color: #fff;
+}
+
+.message {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.errorMessage {
+  color: rgb(239, 54, 54);
+  font-weight: 700;
+}
+
+.successMessage {
+  color: #66c074;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 748px) {
+  .subscribeForm input {
+    width: 200px;
+    font-size: 0.9rem;
+  }
+  .subscribeForm button {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .subscribeForm button {
+    margin-left: 0px;
+    margin-top: 1rem;
+  }
+  .subsHeading {
+    font-size: 1rem;
+    text-align: center;
+  }
 }

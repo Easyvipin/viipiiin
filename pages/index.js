@@ -4,6 +4,7 @@ import About from "../Components/About";
 import Card from "../Components/Card";
 import MailchimpComponent from "../Components/MailchimpComponent";
 import Navigation from "../Components/Navigation";
+import Projects from "../Components/Projects";
 import styles from "../styles/Home.module.css";
 import { getArticleFromSlug, getSlugs, getAllArticles } from "../utils/mdx";
 
@@ -38,6 +39,7 @@ export default function Home({ posts }) {
             );
           })}
         </div>
+        <Projects />
         <MailchimpComponent />
       </main>
     </div>

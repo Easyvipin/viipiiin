@@ -50,6 +50,8 @@ export default function Blog({ post: { source, frontmatter } }) {
         <div className="content">
           <MDXRemote {...source} />
         </div>
+
+        <div className={styles.blogFooter}>div.</div>
       </div>
     </React.Fragment>
   );

@@ -112,6 +112,7 @@
 .pichContainer {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   margin-top: 3rem;
   padding: 1.8rem;
   background-color: #fff;
@@ -159,4 +160,36 @@
 }
 .pichActions button {
   width: 70%;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: rgb(44, 44, 44);
+  color: #fff;
+  margin: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 5px rgb(44, 44, 44);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .aboutMe {
+    width: 100%;
+  }
+  .pichActions {
+    width: 100%;
+  }
+  .pichMessage {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .pichActions button {
+    font-size: 0.8rem;
+    margin: 0.2rem;
+    padding: 0.6rem;
+  }
+  .name {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
 }

@@ -20,8 +20,8 @@ const Pich = () => {
         </p>
       </div>
       <div className={styles.pichActions}>
-        <button>Share</button>
-        <button>Donate a Coffee</button>
+        <button>Share!</button>
+        <button>Got a Work ?</button>
       </div>
     </div>
   );

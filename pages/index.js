@@ -25,19 +25,22 @@ export default function Home({ posts }) {
           <div className={styles.subTitle}>Software Engineer</div>
         </div>
         <About />
-        <div className={styles.flexContainer}>
-          {posts.map((frontMatter) => {
-            return (
-              <Card
-                title={frontMatter.title}
-                excerpt={frontMatter.excerpt}
-                date={frontMatter.publishedAt}
-                tag={frontMatter.tag}
-                readTime={frontMatter.readingTime}
-                slug={frontMatter.slug}
-              />
-            );
-          })}
+        <div className={styles.blogSection}>
+          <div className={styles.blogHeader}>Read About</div>
+          <div className={styles.flexContainer}>
+            {posts.map((frontMatter) => {
+              return (
+                <Card
+                  title={frontMatter.title}
+                  excerpt={frontMatter.excerpt}
+                  date={frontMatter.publishedAt}
+                  tag={frontMatter.tag}
+                  readTime={frontMatter.readingTime}
+                  slug={frontMatter.slug}
+                />
+              );
+            })}
+          </div>
         </div>
         <Projects />
         <MailchimpComponent />

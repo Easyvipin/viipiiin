@@ -2,11 +2,17 @@
 
 :root {
   --bodyBg: #fff;
-  --contBg: #cdccd2;
+  --contBg: #fffffe;
+  --headline: #094067;
+  --subHeadline: #5f6c7b;
+  --para: #5f6c7b;
+  --button: #3da9fc;
+  --headerSize: 2.4rem;
+  --headerWt: 700;
 }
 
 html {
-  background-color: rgb(88, 99, 102);
+  background-color: var(--contBg);
   margin: 0;
   padding: 0;
 }
@@ -14,7 +20,7 @@ body {
   padding: 1rem;
   margin: auto;
   width: 75vw;
-  background-color: var(--bodyBg);
+  background-color: #fffffe;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   position: relative;
@@ -28,6 +34,14 @@ body {
   }
 }
 
+p {
+  color: var(--para);
+}
+button {
+  background-color: var(--button);
+  color: #fffffe !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -39,6 +53,7 @@ a {
 
 .header-name {
   font-size: 2.1rem;
+  color: var(--headline);
 }
 
 nav {
@@ -62,6 +77,7 @@ nav ul {
   align-items: center;
   list-style: none;
   padding: 0;
+  color: var(--button);
 }
 
 nav ul li {
@@ -74,7 +90,6 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: var(--contBg);
 }
 
 @media screen and (max-width: 1100px) {

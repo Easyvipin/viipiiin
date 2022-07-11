@@ -20,7 +20,7 @@ const Card = ({ title, excerpt, readTime, tag, date, slug }) => {
       </div>
       <div className={styles.cardFooter}>
         <Link href={`/blogs/${slug}`}>
-          <a className={styles.readButton}>Read</a>
+          <a className={styles.readButton}>Read More</a>
         </Link>
       </div>
     </div>

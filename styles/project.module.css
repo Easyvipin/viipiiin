@@ -1,17 +1,19 @@
 .projectContainer {
-  border: 3px dashed black;
+  border: 3px dashed var(--headline);
   padding: 3rem 3rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
-  background-color: #dcdddf;
+  background-color: var(--contBg);
 }
 
 .projectHeader {
-  font-size: 3rem;
+  font-size: var(--headerSize);
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--headline);
+  font-weight: var(--headerWt);
 }
 
 .projectHeader div {

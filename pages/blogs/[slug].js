@@ -32,7 +32,7 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
   return (
     <React.Fragment>
       <Head>
-        <title>{frontmatter.title} | My blog</title>
+        <title>{frontmatter.title}</title>
       </Head>
       <div className={styles.articleContainer}>
         <h1 className={styles.articleTitle}>{frontmatter.title}</h1>
@@ -40,7 +40,7 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
           {dayjs(frontmatter.publishedAt).format("MMMM D, YYYY")}
         </span>
         <span className={styles.time}>{frontmatter.readingTime}</span>
-        <div class={styles.cover}>
+        <div className={styles.cover}>
           <Image
             src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg"
             width="100%"
@@ -65,6 +65,7 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
                   tag={frontMatter.tag}
                   readTime={frontMatter.readingTime}
                   slug={frontMatter.slug}
+                  key={frontMatter.title}
                 />
               );
             })}

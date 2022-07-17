@@ -39,8 +39,8 @@ const Projects = () => {
               >
                 <Image
                   src="https://img.icons8.com/ios/250/000000/box.png"
-                  width={"30px"}
-                  height={"30px"}
+                  width={"20px"}
+                  height={"20px"}
                 />
                 &nbsp; &nbsp;
                 <div> / {eachProject}</div>

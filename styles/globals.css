@@ -19,7 +19,8 @@ html {
 body {
   padding: 1rem;
   margin: auto;
-  width: 75vw;
+  width: calc(100vw - 25%);
+  border: 2px solid black;
   background-color: #fffffe;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;

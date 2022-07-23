@@ -12,14 +12,16 @@ const About = () => {
             quibusdam suscipit quas sequi natus voluptates sed, accusamus
             aliquid. Laudantium saepe placeat quam hic fugiat inventore.
           </p>
-          <button className={styles.exploreButton}>
-            <p>Explore More</p>
-            <Image
-              src="https://img.icons8.com/ios/250/000000/galaxy.png"
-              width="25"
-              height="25"
-            />
-          </button>
+          <a href="https://easyvipin.github.io">
+            <button className={styles.exploreButton}>
+              <p>Here is my portfolio</p>
+              <Image
+                src="https://img.icons8.com/ios/250/FFFFFF/galaxy.png"
+                width="25"
+                height="25"
+              />
+            </button>
+          </a>
         </div>
         <div>
           <Image src={Profile} width={800} height={800}></Image>

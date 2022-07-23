@@ -43,8 +43,8 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
         <div className={styles.cover}>
           <Image
             src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg"
-            width="100%"
-            height="100%"
+            width="50%"
+            height="50%"
             layout="responsive"
             objectFit="cover"
           />
@@ -52,9 +52,12 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
         <div className={styles.content}>
           <MDXRemote {...source} />
         </div>
-        <Pich />
+        <Pich title={frontmatter.title} />
         <div className={styles.blogFooter}>
           <div className={styles.headingFooter}>More Blogs to explore</div>
+          <p className={styles.subHeader}>
+            Tehnichal Blogs based on React , js , Next.js
+          </p>
           <div className={styles.flexContainer}>
             {otherPosts.map((frontMatter) => {
               return (

@@ -72,8 +72,9 @@
 }
 
 .blogSection {
-  background-color: #d8eefe;
+  background-color: #fff;
   padding: 8rem 0;
+  box-shadow: 0px 0px 5px #fff;
 }
 
 .flexContainer {
@@ -97,6 +98,17 @@
   margin: 2rem;
   box-shadow: 0px 0px 4px var(--contBg) (44, 44, 44);
   background: var(--contBg);
+  border: 3px solid rgb(232, 229, 251);
+  transition: background 0.4s ease-in;
+}
+.card:hover {
+  background: #000;
+  color: rgb(232, 229, 251);
+  border: 2px solid rgb(172, 161, 249);
+}
+
+.card:hover p {
+  color: rgb(232, 229, 251);
 }
 
 .cardHeader {
@@ -138,8 +150,7 @@
   justify-content: center;
   width: auto;
   padding: 0.5rem 0.5rem;
-  color: var(--contBg);
-  background: var(--headline);
+  color: rgb(165, 151, 255);
   text-align: center;
   border-radius: 2px;
 }
@@ -159,7 +170,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   .title {
     font-size: 2rem;
   }
@@ -177,6 +188,19 @@
   .exploreButton {
     width: 100%;
     justify-content: center;
+  }
+  .cardTitle {
+    font-size: 1rem;
+  }
+  .cardBody {
+    font-size: 0.8rem;
+  }
+  .blogSection {
+    padding: 2rem 0;
+  }
+  .blogHeader {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
   }
 }
 
@@ -241,7 +265,7 @@
 
 @media screen and (max-width: 748px) {
   .subscribeForm input {
-    width: 200px;
+    width: 300px;
     font-size: 0.9rem;
   }
   .subscribeForm button {
@@ -249,7 +273,10 @@
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 600px) {
+  .card {
+    margin: 0.5rem;
+  }
   .subscribeForm button {
     margin-left: 0px;
     margin-top: 1rem;

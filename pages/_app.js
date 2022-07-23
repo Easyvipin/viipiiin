@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
             rel="noopener noreferrer"
           >
             <Image
-              src="https://img.icons8.com/ios/250/FFFFFF/twitter.png"
+              src="https://img.icons8.com/ios/250/000000/twitter.png"
               width={20}
               height={20}
             />

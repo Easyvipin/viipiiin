@@ -38,7 +38,7 @@ const Projects = () => {
                 } `}
               >
                 <Image
-                  src="https://img.icons8.com/ios/250/000000/box.png"
+                  src="https://img.icons8.com/ios/250/FFFFFF/box.png"
                   width={"20px"}
                   height={"20px"}
                 />

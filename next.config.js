@@ -3,8 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["img.icons8.com", "images.pexels.com"],
-    loader: "akamai",
-    path: "",
   },
   webpack: (config) => {
     config.resolve.alias = {

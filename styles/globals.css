@@ -27,6 +27,8 @@ body {
   position: relative;
 }
 
+/* check commit  */
+
 @media screen and (max-width: 1000px) {
   body {
     width: 100vw;

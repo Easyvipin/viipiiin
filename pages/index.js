@@ -1,8 +1,8 @@
-import Head from "next/head";
 import Image from "next/image";
 import About from "../Components/About";
 import Card from "../Components/Card";
 import MailchimpComponent from "../Components/MailchimpComponent";
+import Meta from "../Components/Meta";
 import Navigation from "../Components/Navigation";
 import Projects from "../Components/Projects";
 import styles from "../styles/Home.module.css";
@@ -12,12 +12,11 @@ export default function Home({ posts }) {
   /*   console.log(process.env.NEXT_PUBLIC_MAILCHIMP_ACTION_URL); */
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Viipiiin</title>
-        <meta name="description" content="All about Tech and Globe" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <Meta
+        title={"Vipin"}
+        description={"Blogs based on tech and travel"}
+        coverImg={"./profileImg"}
+      />
       <main>
         <div className={styles.titleContainer}>
           <div className={styles.title}>Sup &#x1F33B;</div>

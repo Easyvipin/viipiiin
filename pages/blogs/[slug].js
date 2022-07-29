@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Meta from "../../Components/Meta";
 import styles from "../../styles/blog.module.css";
 import rehypeSlug from "rehype-slug";
 import { MDXRemote } from "next-mdx-remote";
@@ -31,9 +32,12 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
   console.log(otherPosts);
   return (
     <React.Fragment>
-      <Head>
-        <title>{frontmatter.title}</title>
-      </Head>
+      <Meta
+        title={frontmatter.title}
+        description={frontmatter.excerpt}
+        coverImg={"./profileImg"}
+      />
+
       <div className={styles.articleContainer}>
         <h1 className={styles.articleTitle}>{frontmatter.title}</h1>
         <span className={styles.publishDate}>

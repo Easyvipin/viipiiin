@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React from "react";
-import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
+
 import {
   TwitterShareButton,
   TwitterIcon,
@@ -11,8 +11,6 @@ import {
 } from "next-share";
 import styles from "../styles/blog.module.css";
 import ProfilePic from "../Images/Icons/profile.png";
-import { useState } from "react";
-import { useEffect } from "react";
 const Pich = ({ title }) => {
   const [url, setUrl] = useState("");
 

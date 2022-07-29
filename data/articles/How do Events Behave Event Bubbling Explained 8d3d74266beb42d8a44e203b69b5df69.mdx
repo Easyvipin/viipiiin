@@ -1,0 +1,116 @@
+---
+excerpt: "Whenever an event happens it runs an event handler on that element, then on the parent element"
+title: "How do Events Behave? Event Bubbling Explained"
+publishedAt: "2022-04-16"
+tag: "Javascript"
+---
+
+Everything is created from some event even our **Universe** and the little **Browser Popup**.
+
+**_What is an event ?_**
+It is an occurrence of different activities, right?
+
+### Events in Browser
+
+There are different type of action that are performed on dom are called events
+
+Some events as follows
+
+- click
+- keyup/keydown
+- Mouseover/out
+
+The function which executes when a certain event occur is called **Event Handler**
+
+and this is how we write event handlers in a different ways.
+
+```
+1. <button id="btn" onClick="alert('clicked')">Click</button>
+
+2.  <button id="btn">Click</button>
+    <script>
+      btn.onclick = function () {
+        console.log("clicked");
+      };
+    </script>
+
+```
+
+I hope it was a good review of the basics.
+
+**_But do you know how dom reacts when events happen on an element?_**
+
+```
+ <section onClick="alert('i am section')">
+      <div onClick="alert('i am div')">
+        <p onClick="alert('i am p')">click me</p>
+      </div>
+    </section>
+
+```
+
+Now if the user click on the p element all three alert box will pop up.
+Bit strange right?
+
+This is called a **Bubbling effect**.
+
+**_Whenever an event happens it runs an event handler on that element, then on the parent element and then all the way to root elements._**
+
+Detailed Points of what will happen if the user click on the `p` element
+
+1. A `p` element event handler will run which is `onclick` and then the Browser will generate an alert box displaying **_i am p_**.
+2. If the parent element contains the same event handler then the parent element handler will also execute.
+3. In this case div contains the same event handler `onclick` so that handler will be called too.
+4. This process continues to the root element.
+5. Thus, the section element event handler also generate an alert box.
+6. This Bubble effect will end on the `document` object.
+
+![https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y3d6x2a0ihe8tzm6q4be.png](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y3d6x2a0ihe8tzm6q4be.png)
+
+This bubbling effect works like a bubble that is created when a stone or a raindrop fall on lakes.
+
+![https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ttimvprt7u5nfisqh0hr.jpg](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ttimvprt7u5nfisqh0hr.jpg)
+
+**_Every event show bubble effect except some few instances_**
+
+To check if the event show bubble effect
+
+`event.bubbles` will return a boolean value
+
+### Stop a Bubbling effect
+
+There are two functions which can stop a bubble effect
+
+`event.stopPropagation()`- stop the handler of current element
+and restrict the bubble effect.
+
+```
+   <section onClick="alert('section')">
+       <div onClick="alert('div')">
+         <p onClick="event.stopPropagation()">click me</p>
+       </div>
+     </section>
+  <!-- no alert box will generate -->
+
+```
+
+`event.stopImmediatePropagation()` - If the current element has
+more handler on same event.
+
+```
+ <section onClick="alert('section')">
+       <div onClick="alert('div')">
+         <p onClick="event.stopImmediatePropagation()"
+         onClick="alert('second hanlder')">click me</p>
+       </div>
+     </section>
+  <!-- no alert box will generate -->
+
+```
+
+Although Developers avoid the restriction on the bubble effect because it can lead to some large pitfalls.
+
+Think and comment down some examples of pitfalls.
+
+Thank you for your read!!
+If you find this helpful share this with your fellow Devs.

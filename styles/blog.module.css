@@ -29,6 +29,7 @@
 .content code {
   font-size: 1.3rem;
 }
+
 /* blog footer */
 
 .blogFooter {
@@ -234,5 +235,8 @@
   }
   .pichActions h2 {
     font-size: 0.9rem;
+  }
+  .content img {
+    width: -webkit-fill-available;
   }
 }

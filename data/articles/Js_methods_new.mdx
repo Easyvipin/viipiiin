@@ -1,0 +1,161 @@
+---
+excerpt: "According to ECMAScript2015(Es6), new functionalities were added to JavaScript. In this article, we will explore some of them"
+title: "Es6 🆕 Js Array Methods You may not know about"
+publishedAt: "2020-11-29"
+tag: "JavaScript"
+---
+
+According to ECMAScript2015(Es6), new functionalities were added to JavaScript.
+
+Most of the new methods were added for arrays.
+In this article, we will explore some of them.
+
+## `.from( )`
+
+This function returns a copy of the array `without copying the reference of the given array`.
+
+Generally, In Array whenever we make a copy of the array the
+reference remains the same for the new copied array .
+
+Because of this behaviour any changes to duplicate array also
+reflect on the original one.
+
+Example :
+
+```javascript
+let no = [2, 3, 4, 5, 6];
+let copyno = no; // copy of no
+console.log(copyno); // [2,3,4,5,6]
+// adding '10' at 0 index of copyno
+copyno[0] = 10; // this will also be reflected on no array.
+console.log(no); //[10,3,4,5,6]
+```
+
+But `.from()` alter this kind of behaviour.
+
+`let copyarr = Array.from(originalArray)`
+
+Example :
+
+```javascript
+let count = [2, 4, 5, 6, 7, 8, 9, 13];
+let count2 = Array.from(count);
+count2[8] = 14;
+console.log(count);
+/* [2, 4, 5, 6, 7, 8, 9, 13] remain unchanged*/
+console.log(count2);
+/* [2, 4, 5, 6, 7, 8, 9, 13, 14] */
+```
+
+We can also pass a callback function to `.from()`
+
+```javascript
+let even = Array.from(count, (x) => x % 2 == 0);
+console.log(even);
+/* [true, true, false, true, false, true, false, false] */
+```
+
+## `.enteries( )`
+
+This function returns an iterable object which contains key:value
+pairs.
+
+`let allEntry = arr.enteries()`
+
+```javascript
+let numbers = new Array(2, 3, 4, 5, 6);
+let aEnteries = numbers.entries();
+console.log(aEnteries.next().value);
+console.log(aEnteries.next().value);
+/* [0,2] [1,3] [key,value]*/
+```
+
+## `.keys() & .values()`
+
+This both function works the same as .entries().
+But `.keys()` return only keys (indexes) and `.values ` return values(element).
+
+```javascript
+let count = [2, 4, 5, 6, 7, 8, 9, 13];
+
+let allKeys = count.keys(); //return object contains keys only
+console.log(allKeys.next().value); //0
+console.log(allKeys.next().value); //1
+console.log(allKeys.next().value); //2
+
+let allValues = count.values();
+console.log(allValues.next().value); //2
+console.log(allValues.next().value); //4
+console.log(allValues.next().value); //5
+```
+
+## `.fill( )`
+
+Fill function fills the array with static value at all of the
+position by default.
+
+```javascript
+let games = ["football", "basket ball", "swimming", "cricket"];
+games.fill("football");
+console.log(games);
+/* ["football", "football", "football", "football"] */
+```
+
+To start the filling from a given position we can pass another parameter specifying the starting index.
+
+```javascript
+let games = ["football", "basket ball", "swimming", "cricket"];
+games.fill("football", 2);
+/* ["football", "basket ball", "football", "football"] */
+//  0         , 1            , 2          , 3
+```
+
+we can also pass the position where we want to end the fillings.
+The end index is `inclusive` in filling process.
+
+```javascript
+let games = ["football", "basket ball", "swimming", "cricket"];
+games.fill("football", 1, 2);
+/* ["football", "football", "football", "cricket"] */
+//  0         , 1 (start) , 2 (ending) , 3
+```
+
+## `includes( )`
+
+This function returns True if the given element is found in the
+array and False if not.
+
+`arr.includes(element)`
+
+```javascript
+let count = [2, 4, 5, 6, 7, 8, 9, 13];
+console.log(count.includes(7)); // true
+console.log(count.includes(14)); //false
+```
+
+## `.find( ) & .findIndex( )`
+
+`.find( )` function receives a callback function.
+
+This callback function will loop through all the values and the
+first value which satisfies the condition will be returned.
+
+`.findIndexOf( )` function also work like `.find( )` but this
+function returns the index of the value.
+
+Example :
+
+```javascript
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 24];
+function multipleOf12(element, index, array) {
+  return element % 12 == 0;
+}
+console.log(numbers.find(multipleOf12));
+/* find return the element which first satisfies the condition  thats why we get 12 as output instead of 24*/
+
+console.log(numbers.findIndex(multipleOf12));
+/* find return the  index of the element which is 11 in our case */
+```
+
+Thankyou for your read:heart:
+" Keep Learning "

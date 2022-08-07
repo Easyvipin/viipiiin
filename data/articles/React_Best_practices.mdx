@@ -1,0 +1,145 @@
+---
+excerpt: "In this Article i’ll go through some of the important keys to be aware of while you build your next application with React."
+title: "5 Best practices for a React Project."
+publishedAt: "2022-07-28"
+tag: "React"
+---
+
+_With the time there are lot of changes in a ways of how we build the frontend for web application._
+
+_The codebase from single .js file now has to split into components or modules._
+
+_As the application scales its hard to manage the distributed codebase and also make the development process tough._
+
+_One of the biggest challenge i used to face in the initial stage of building React project was to_
+
+**‘ How to have better architecture ? which can easily fit for scaling “**
+
+**In this Article i’ll go through some of the important keys to be aware of while you build your next application with React.**
+
+## 1. Its not just about having a separate folder for Components!
+
+You might have seen in lot of youtube videos of react project how the tutor mention the practice of keeping the component in different folder called Components.
+
+**Thats one of the amazing practice !!!**
+
+But what about your **utilities , modular styles , assets , static data , tests** ?
+
+How to deal with that ?
+
+Its very important to distribute your frontend application into the general requirements .
+
+**What could be the general Requirement other than components ?**
+
+- **Hooks**
+
+A cart component might be using a custom hook to store the item in the localestorage and may be this hook could be used by Navigation component to show how many cartItems you have in your localeStorage.
+So having a seperate folder for custom hooks sounds like a general requirement for the react application.
+
+- **Utils**
+
+one or more component in you folder might need a common functionality called as utilities function
+
+For eg Validation functions to validate different kind of input fields in your application.
+
+We can just have it at one place and can use it everywhere in application
+
+- **Styles**
+
+Generally we follow the suite of reusability of styles in frontend application ,
+
+having repeated classes is a bad sign of styling the projects.
+
+We all try perform and follow this ritual.
+
+Following is just an example of scalable architecture.
+
+![Architecture](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r1ggqxaa84jvn3cndinl.png)
+
+## 2. Build Reusable components !
+
+When we use a UI component at multiple places in our application that component basically called as **reusable components.**
+
+Some examples are Cards , Badges , Form Controllers , Navigation , Breadcrumbs , buttons , etc.
+
+I personally focus on two params while building a Reusable component.
+
+- **Design**
+
+The Dimensions of the component margin , padding , color , width , height can be it adjustable to the need of the development .
+
+- **Scalability**
+
+If you are building a project that you believe that going to scale at large size its better to build a component fit for scaling the application .
+
+Otherwise you have to keep creating component instead of focusing on scaling.
+
+Example of Reusable button component.
+
+![Reusable component](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3kiwn0uwtlet4kvbatp.png)
+
+## 3. Aliasing paths in project.
+
+‘Alias’ Basically means an alternative name , here in this case it will be alternative path.
+
+```jsx
+import Navbar from "../components/Navbar";
+
+import Navbar from "@components/Navbar"; //aliased .
+```
+
+With rate of scaling —- nesting of folder also increases so its better to have an alternative paths
+
+(aliased paths).
+
+```jsx
+../../../utils      // worst
+
+@utils/validations  // best
+```
+
+It helps the developer to know the origin of module easily.
+
+To set up aliased path in your React project follow this amazing tutorial.
+
+[tutorial](https://medium.com/how-to-react/create-path-aliases-in-react-js-1256550c7d52)
+
+## 4. Don’t ignore the warning of keys
+
+As we render the list of items from an array without key attribute we get this silly warning or IMPORTANT Warning ☠️
+
+```jsx
+cartItems.map((item) => <span>{item}</span>);
+```
+
+```jsx
+Warning : Each Child in an array or iterator should have a unique "key" prop.
+```
+
+The key attribute to each item help the react at rendering phase while performing action like creation , updation and deletion to that item.
+
+So It’s very important that each item in a list should have a unique key.
+
+```jsx
+cartItems.map((item) => <span key={item.toString()}>{item}</span>);
+```
+
+To understand this concept in more depth please check out this blog
+
+[tutorial](https://www.geeksforgeeks.org/reactjs-keys/#:~:text=A%20%E2%80%9Ckey%E2%80%9D%20is%20a%20special,the%20elements%20in%20the%20lists).
+
+## 5. To track the project progress using version control system (git).
+
+Using version control system while building project helps you to keep a track of changes in your code. It release the headache of developer to manage the code.
+
+like git which start tracking you project as soon as you type **git init** in terminal**.**
+
+The reason this tool is so important in scaling the project is that it will help you go back to the stable version of your project if something fails in the current version of your project.
+
+In Vscode , at the left side menu a number with blue background shows the no of changes you made . ( basically called a source control ) That thing work only when you have setup version control in your system
+
+![Source control](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/09hjgmt505gsozs5uqw8.png)
+
+So that was it guys i hope these points might help you in your project.
+
+Till then **Good bye** ! 👋

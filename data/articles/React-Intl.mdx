@@ -1,0 +1,266 @@
+---
+excerpt: "internationalization is basically the development of an application in order to easily enable localization"
+title: "Internationalization in React with (React-intl )"
+publishedAt: "2022-08-07"
+tag: "React"
+---
+
+## What is **internationalization**?
+
+**internationalization** is hard to pronounce so we sometimes pronounce it this way ( i18n ).
+
+**internationalization is basically the development of an application in order to easily enable localization for users belonging to different regions with different cultures.**
+
+With the rise in globalization, we cannot say that the user will only be coming from a specific region.
+
+Now the user base almost comes from every country in the world.
+Instagram, Twitter, Facebook, google. whatever you name it.
+
+These all big giants have facilitated the culture of i18n in their application.
+
+Let's take an example to understand its importance.
+
+Because of some urgency due to work you need to visit Russia
+
+And for that, you need to apply for a work visa on the Russian website.
+
+Being Spanish you won't be able to understand Russian, so the Russian official website **internationalizes** the website just for users like you.
+
+All the content can be localized to the Spanish language and it will be easy for you to understand how to process your visa file request.
+
+Russian to Spanish ( “Submit ” ) button
+
+![From russian to spanish](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/as7tp99gn0gv9heur5ii.png)
+
+## Now, what is localization ?
+
+Also known by (L10N).
+
+Localization is an adaption of application content according to the region, where the app is being used.
+
+![Different formats](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m3q4bq1nleqkb4hdv6z7.png)
+
+## The translation is not the complete solution
+
+Because sometimes we need a stable parser to format the number, and currency for a particular region.
+
+The line direction is also needed to be decided.
+
+So there are many factors why translation is not always a better solution
+
+## To enable **Internationalization** in React with react-intl by formatjs
+
+With React-intl we can easily add **Internationalization** (i18n) to our React app
+
+install react -intl to your react app
+
+```jsx
+npm install react-intl
+```
+
+This is the whole code of our small application , we will break down concepts one by one.
+
+Our Internalized (i18n) APP
+
+```jsx
+import { useState } from "react";
+import { IntlProvider, FormattedMessage, FormattedNumber } from "react-intl";
+
+const messagesInFrench = {
+  myMessage: "Aujourd'hui, c'est le {ts, date, ::yyyyMMdd}",
+};
+
+const messageInHindi = {
+  myMessage: "आज की तारीख {ts, date, ::yyyyMMdd}",
+};
+
+const messageInEnglish = {
+  myMessage: "Today is {ts ,date , ::yyyyMMdd}",
+};
+
+function App() {
+  const [currentLocale, setLocale] = useState("en");
+  const getMessageForLocale = (localeType) => {
+    switch (localeType) {
+      case "en":
+        return messageInEnglish;
+      case "fr":
+        return messagesInFrench;
+      case "hi":
+        return messageInHindi;
+    }
+  };
+
+  return (
+    <IntlProvider
+      messages={getMessageForLocale(currentLocale)}
+      locale={currentLocale}
+      defaultLocale="en"
+    >
+      <p>
+        <FormattedMessage id="myMessage" values={{ ts: Date.now() }} />
+        <br />
+      </p>
+      <button onClick={() => setLocale("fr")}>French</button> <br />
+      <button onClick={() => setLocale("hi")}>Hindi</button>
+    </IntlProvider>
+  );
+}
+
+export default App;
+```
+
+Our application is localized in three different locale French , Hindi , English.
+
+![English](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nlfknlm0yoa6v67rhg6d.png)
+![Hindi](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xo349ijxdpza4v2y5jra.png)
+![French](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gpo33lsav06kwkcc3pg9.png)
+
+Breakdown of App.js
+
+```jsx
+import { IntlProvider, FormattedMessage } from "react-intl";
+```
+
+### IntlProvider
+
+This actually provides the context of (i18n) data (like messages for the different regions) to children's components.
+
+**This configures the current locale and translation message at the root of our application so that it can be accessed anywhere in our app.**
+
+What is a **locale**?
+
+**locale is a combination of language + region**
+
+- `en-US` for English as spoken in the United States
+- `en-GB` for English as spoken in the United Kingdom
+- `es-AR` for Spanish as spoken in Argentina
+
+Here are the translation messages are:
+
+```jsx
+const messagesInFrench = {
+  myMessage: "Aujourd'hui, c'est le {ts, date, ::yyyyMMdd}",
+};
+
+const messageInHindi = {
+  myMessage: "आज की तारीख {ts, date, ::yyyyMMdd}",
+};
+
+const messageInEnglish = {
+  myMessage: "Today is {ts ,date , ::yyyyMMdd}",
+};
+```
+
+```jsx
+ <IntlProvider
+      messages={getMessageForLocale(currentLocale)}
+      locale={currentLocale}
+      defaultLocale="en"
+    >
+```
+
+message : getMessageForLocale( ) gets the message for current locale
+
+locale: currentLocale has the value of the current locale of our app
+
+defaultLocale: ‘en’ English
+
+When we click these buttons the current locale change respectively
+
+```jsx
+ <button onClick={() => setLocale("fr")}>French</button> <br/>
+  <button onClick={() => setLocale("hi")}>Hindi</button>
+```
+
+If ‘french’ button is clicked the current locale will be set to “fr”
+if ‘hindi’ button is clicked the current locale will be set to “hi”
+
+And hence also the messages will also be changed in accord to the region.
+
+```jsx
+const [currentLocale, setLocale] = useState("en");
+const getMessageForLocale = (localeType) => {
+  switch (localeType) {
+    case "en":
+      return messageInEnglish;
+    case "fr":
+      return messagesInFrench;
+    case "hi":
+      return messageInHindi;
+  }
+};
+```
+
+### FormatMessage
+
+This component formats the message with the id value of the string based on the locale.
+
+Here in our example
+
+```jsx
+const messageInHindi = {
+  myMessage: "आज की तारीख {ts, date, ::yyyyMMdd}",
+};
+
+const messageInEnglish = {
+  myMessage: "Today is {ts ,date , ::yyyyMMdd}",
+};
+
+// id is MyMessage
+// we use format message this way
+
+<FormattedMessage id="myMessage" values={{ ts: Date.now() }} />;
+```
+
+FormatMessge will render that particular id message
+
+It also enables embedding the data values according to the format of the current locale.
+
+For ‘en’ locale
+
+```jsx
+Today is {ts ,date , ::yyyyMMdd}  // english format
+
+// ts value will be of Date.now()
+
+// which will render
+
+// Today is 08/07/2022
+
+// 08/07/2022  mm/dd/yy the english format
+```
+
+For ‘hi’ locale
+
+```jsx
+आज की तारीख {ts, date, ::yyyyMMdd} // hindi format
+
+// ts value will be of Date.now()
+
+// which will render
+
+// आज की तारीख 07/08/2022
+
+//   07/08/2022 dd/mm/yy the hindi localized format
+```
+
+You can observe how the date format change according to region.
+
+That's what is basically called localization (L10N).
+
+Formatting the content of our based on location and region of our user.
+
+There are also some other components for formatting different types of data like Numbers, Relative time .
+
+You can refer to the API docs.
+
+[https://formatjs.io/docs/react-intl/api/#formattime](https://formatjs.io/docs/react-intl/api/#formattime)
+
+So this was just the basic example of how we can enable our react-app to operate in a different regions.
+
+I hope this might helped you!
+
+Thank you for the read 🌻.
+
+Until then Good Bye 👋

@@ -44,15 +44,6 @@ export default function Blog({ post: { source, frontmatter }, otherPosts }) {
           {dayjs(frontmatter.publishedAt).format("MMMM D, YYYY")}
         </span>
         <span className={styles.time}>{frontmatter.readingTime}</span>
-        <div className={styles.cover}>
-          <Image
-            src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg"
-            width="50%"
-            height="50%"
-            layout="responsive"
-            objectFit="cover"
-          />
-        </div>
         <div className={styles.content}>
           <MDXRemote {...source} />
         </div>

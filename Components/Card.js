@@ -13,10 +13,7 @@ const Card = ({ title, excerpt, readTime, tag, date, slug }) => {
         </div>
       </div>
       <div className={styles.cardBody}>
-        <p className={styles.excerpt}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo rerum
-          assumenda natus fugiat provident impedit.
-        </p>
+        <p className={styles.excerpt}>{excerpt}</p>
       </div>
       <div className={styles.cardFooter}>
         <Link href={`/blogs/${slug}`}>
